@@ -96,18 +96,28 @@ NSString* const DEFAULT_SOUND = @"res://platform_default";
 /**
  * The notification's alert body.
  */
-- (NSString*) alertBody
+
+- (NSString*) alertTitle
 {
     NSString* title = [self title];
+
+    NSString* alertTitle = title;
+
+    return alertTitle;
+}
+
+- (NSString*) alertBody
+{
+    // NSString* title = [self title];
     NSString* msg = [self text];
 
     NSString* alertBody = msg;
 
-    if (![self stringIsNullOrEmpty:title])
-    {
-        alertBody = [NSString stringWithFormat:@"%@\n%@",
-                     title, msg];
-    }
+    // if (![self stringIsNullOrEmpty:title])
+    // {
+    //     alertBody = [NSString stringWithFormat:@"%@\n%@",
+    //                  title, msg];
+    // }
 
     return alertBody;
 }
